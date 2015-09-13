@@ -55,12 +55,12 @@
                                                 </div>
                                             </div>
 
-                                            <div t-attf-class="col-md-4  form-group #{error and 'phone' in error and 'has-error' or ''}">
-                                                <label class="sr-only control-label" for="phone">Telefon Nummer</label>
+                                            <div t-attf-class="col-md-4  form-group #{error and 'email' in error and 'has-error' or ''}">
+                                                <label class="sr-only control-label" for="phone">E-mail</label>
                                                 <div>
-                                                     <input type="number" class="form-control" name="phone"
-                                                           placeholder="Ihre Telefonnummer" required="True"
-                                                           t-attf-value="#{phone or ''}"/>
+                                                     <input type="email" class="form-control" name="email"
+                                                           placeholder="Ihre E-mail" required="True"
+                                                           t-attf-value="#{email or ''}"/>
                                                 </div>
                                             </div>
 

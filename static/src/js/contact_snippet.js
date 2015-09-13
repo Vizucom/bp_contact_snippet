@@ -7,16 +7,16 @@ $(document).ready(function () {
             //prevent the form from doing a submit
             ev.preventDefault();
             var name = form.find('input[name=contact_name]').val();
-            var phone = form.find('input[name=phone]').val();
+            var email = form.find('input[name=email]').val();
             var description = form.find('textarea[name=description]').val();
             return openerp.jsonRpc('/contactus_snippet', 'call', {
                 'name': name,
-                'phone': phone,
+                'email': email,
                 'description': description
             }).then(function (data) {
                 if (data && data.success) {
                     form.find('input[name=contact_name]').val('');
-                    form.find('input[name=phone]').val('');
+                    form.find('input[name=email]').val('');
                     $('.contact_snipped_hide').show()
                     $('.contact_snipped_show').hide()
                 } else {

@@ -65,7 +65,7 @@ class contactus(http.Controller):
 
     @http.route(['/contactus_snippet'], type='json', auth="public",
                 website=True)
-    def contactus(self, name, phone, description):
+    def contactus(self, name, email, description):
         """Allow to be overrided."""
         def dict_to_str(title, dictvar):
             ret = "\n\n%s" % title
@@ -75,8 +75,8 @@ class contactus(http.Controller):
 
         crm_data = {
             'contact_name': name,
-            'phone': phone,
-            'description': description
+            'email_from': email,
+            'description': description,
         }
         # Only use for behavior, don't stock it
         _TECHNICAL = ['show_info', 'view_from',
