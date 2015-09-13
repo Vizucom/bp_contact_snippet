@@ -64,7 +64,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="hidden">
+                                            <div>
                                                 <textarea class="form-control" name="description"
                                                           style="min-height: 120px"
                                                           required="False">LASS UNS DEINE NUMMER DA!
