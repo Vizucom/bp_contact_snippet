@@ -130,7 +130,7 @@
                             </div>
                                 <form action="#" method="post" class="call-me">
                                     <div class="row">
-                                        <div class="col-xs-12 col-md-5 col-md-offset-1">
+                                        <div class="col-xs-12 col-md-10 col-md-offset-1">
                                             <div t-attf-class="form-group #{error and 'contact_name' in error and 'has-error' or ''}">
                                                 <label class="sr-only control-label" for="contact_name">Your Name</label>
                                                 <div>
@@ -140,7 +140,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-md-5">
+                                        <div class="col-xs-12 col-md-10 col-md-offset-1">
                                             <div t-attf-class="form-group #{error and 'email' in error and 'has-error' or ''}">
                                                 <label class="sr-only control-label" for="phone">E-mail</label>
                                                 <div>
