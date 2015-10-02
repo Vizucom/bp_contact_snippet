@@ -9,18 +9,21 @@
         </template>
 
 
-        <template id="contact_snippet_body" inherit_id="website.snippets" name="Clean Theme snippets">
+
+        <template id="contact_snippet_body" inherit_id="website.snippets" name="Contact Snippets">
+            <!-- Structure snippet -->
+
             <xpath expr="//div[@id='snippet_structure']" position="inside">
                 <div>
                     <div class="oe_snippet_thumbnail">
                         <img class="oe_snippet_thumbnail_img"
                              src="/bp_contact_snippet/static/src/img/contact_snippet_thumbnail.png"/>
-                        <span class="oe_snippet_thumbnail_title">Short Contact Form</span>
+                        <span class="oe_snippet_thumbnail_title">Contact Form</span>
                     </div>
 
-                    <section id="contact-snippet" class="oe_snippet_body">
+                    <section class="contact-snippet oe_snippet_body">
 
-                        <div id="successpage" class="container mt64 contact_snipped_hide" style="display: none">
+                        <div class="container mt64 contact_snipped_hide successpage" style="display: none">
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3">
 
@@ -40,7 +43,7 @@
                                 </div>
                             </div>
                                 <form action="#" method="post" class="call-me">
-                                    <div class="row">                    
+                                    <div class="row">
                                         <div class="col-xs-12 col-md-5 col-md-offset-1">
                                             <div t-attf-class="form-group #{error and 'contact_name' in error and 'has-error' or ''}">
                                                 <label class="sr-only control-label" for="contact_name">Your Name</label>
@@ -60,7 +63,7 @@
                                                            t-attf-value="#{email or ''}"/>
                                                 </div>
                                             </div>
-                                        </div>          
+                                        </div>
                                     </div>
 
                                     <div class="row">
@@ -82,7 +85,7 @@
                                         </div>
                                     </div>
                                 </form>
-    
+
                             <t t-if="res_company.phone">
                                 <div class="text-center mt16">
                                     <p>Or call us directly
@@ -91,8 +94,85 @@
                                 </div>
                             </t>
                         </div>
-
                     </section>
+                </div>
+            </xpath>
+
+            <!-- Content snippet -->
+            <xpath expr="//div[@id='snippet_content']" position="inside">
+                <div>
+                    <div class="oe_snippet_thumbnail">
+                        <img class="oe_snippet_thumbnail_img"
+                             src="/bp_contact_snippet/static/src/img/contact_snippet_thumbnail.png"/>
+                        <span class="oe_snippet_thumbnail_title">Small Contact Form</span>
+                    </div>
+
+                    <div class="oe_snippet_body well contact-snippet">
+
+                        <div class="container mt64 contact_snipped_hide successpage" style="display: none">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">
+
+                                    <div class="alert alert-success mb16">
+                                        <i class="fa fa-check" style="font-size:1.6em"></i>&amp;nbsp<span> Thank you!</span>
+                                        <p>We will get back to you as soon as possible.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container contact_snipped_show">
+                            <div class="row">
+                                <div class="col-xs-12 text-center mb16">
+                                    <h3>Contact Us</h3>
+                                </div>
+                            </div>
+                                <form action="#" method="post" class="call-me">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-5 col-md-offset-1">
+                                            <div t-attf-class="form-group #{error and 'contact_name' in error and 'has-error' or ''}">
+                                                <label class="sr-only control-label" for="contact_name">Your Name</label>
+                                                <div>
+                                                    <input type="text" class="form-control" name="contact_name"
+                                                           placeholder="Your Name" required="True"
+                                                           t-attf-value="#{contact_name or ''}"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-5">
+                                            <div t-attf-class="form-group #{error and 'email' in error and 'has-error' or ''}">
+                                                <label class="sr-only control-label" for="phone">E-mail</label>
+                                                <div>
+                                                     <input type="email" class="form-control" name="email"
+                                                           placeholder="Your E-mail" required="True"
+                                                           t-attf-value="#{email or ''}"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-10 col-md-offset-1">
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="description" placeholder="Your Message"
+                                                          style="min-height: 60px"
+                                                          required="True"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-10 col-md-offset-1">
+                                            <div class="form-group">
+                                                <div>
+                                                    <button class="btn btn-primary btn-lg contact_snippet pull-right">Send</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
                 </div>
             </xpath>
         </template>
